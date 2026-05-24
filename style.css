@@ -88,13 +88,14 @@ nav ul li a:hover{
     border-radius:20px;
     text-align:center;
     color:white;
-    width:70%;
+    width:90%;
     box-shadow:0 8px 30px rgba(0,0,0,0.2);
 }
 
 .overlay h2{
     font-family:'Courier New', Courier, monospace;
-    font-size:50px;
+    color:white;
+    font-size:60px;
     margin-bottom:20px;
     line-height:1.2;
     letter-spacing:2px;
@@ -114,7 +115,7 @@ button{
     padding:14px 30px;
     border:none;
     border-radius:30px;
-    background-color:darkolivegreen;
+    background-color:#2e5a3d;
     color:white;
     font-size:18px;
     font-weight:500;
@@ -123,7 +124,7 @@ button{
 }
 
 button:hover{
-    background-color:#203228;
+    background-color:#234934;
     transform:scale(1.05);
 }
 
@@ -181,7 +182,7 @@ footer{
     padding:20px;
     border-radius:20px;
 
-    width:70%;
+    width:100%;
     margin:auto;
 
     box-shadow:0 8px 20px rgba(0,0,0,0.2);
