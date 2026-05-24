@@ -1,0 +1,219 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background-color:#f4f4f4;
+}
+
+/* Navigation Bar */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+    background-color:rgba(0,0,0,0.5);
+    position:absolute;
+    width:100%;
+    z-index:10;
+}
+
+nav h1{
+    color:white;
+    font-size:50px;
+    font-family:fantasy;
+    letter-spacing:2px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#b7f7c2;
+}
+
+/* Hero Section */
+
+.hero{
+    height:100vh;
+    background-image:url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+/* Dark Overlay */
+
+.hero::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.35);
+}
+
+/* Content Box */
+
+.overlay{
+    position:relative;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(8px);
+    padding:50px;
+    border-radius:20px;
+    text-align:center;
+    color:white;
+    width:70%;
+    box-shadow:0 8px 30px rgba(0,0,0,0.2);
+}
+
+.overlay h2{
+    font-family:'Courier New', Courier, monospace;
+    font-size:50px;
+    margin-bottom:20px;
+    line-height:1.2;
+    letter-spacing:2px;
+}
+
+.overlay p{
+    font-family:cursive;
+    font-size:20px;
+    line-height:1.8;
+    margin-bottom:30px;
+    font-weight:300;
+}
+
+/* Button */
+
+button{
+    padding:14px 30px;
+    border:none;
+    border-radius:30px;
+    background-color:darkolivegreen;
+    color:white;
+    font-size:18px;
+    font-weight:500;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background-color:#203228;
+    transform:scale(1.05);
+}
+
+/* Mobile Responsive */
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+    }
+
+    nav ul{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .overlay{
+        width:90%;
+        padding:30px;
+    }
+
+    .overlay h2{
+        font-size:38px;
+    }
+
+    .overlay p{
+        font-size:16px;
+    }
+
+}
+    /* Footer */
+
+/* Footer */
+
+footer{
+    background:linear-gradient(
+    to right,
+    #1f3b2d,
+    #2e5a3d,
+    #3d6b4f);
+
+    padding:20px 20px;
+    text-align:center;
+    color:white;
+}
+
+.footer-content{
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(10px);
+
+    padding:20px;
+    border-radius:20px;
+
+    width:70%;
+    margin:auto;
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+.footer-content h3{
+    font-size:26px;
+    margin-bottom:10px;
+    color:#d8ffd8;
+
+    font-family:cursive;
+}
+
+.footer-content p{
+    margin:6px 0;
+    font-size:16px;
+    line-height:1;
+}
+
+.contact{
+    margin-top:12px;
+}
+
+.developer{
+    margin-top:12px;
+    color:#b7ffb7;
+    font-style:italic;
+    font-size:18px;
+}
+
+.copyright{
+    margin-top:15px;
+    font-size:14px;
+    color:#dddddd;
+}

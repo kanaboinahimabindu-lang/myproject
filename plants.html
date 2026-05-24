@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Categories</title>
+
+    <style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+
+    /* Brighter background */
+    background-image:
+        linear-gradient(
+        rgba(255,255,255,0.1),
+        rgba(255,255,255,0.1) 
+        ),
+        url('https://images.unsplash.com/photo-1463936575829-25148e1db1b8');
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+}
+
+/* Title */
+h1 {
+    font-family: fantasy;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 60px;
+    color: #1f6f4a;
+    letter-spacing: 2px;
+}
+
+/* Grid */
+.container {
+    width: 90%;
+    margin: 60px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+/* Base Card */
+.card {
+    padding: 40px 25px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    transition: 0.3s ease;
+    backdrop-filter: blur(6px);
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+}
+
+/* Card colors (each category different) */
+.card:nth-child(1) {
+    background: linear-gradient(135deg, #ffe0f0, #ffffff);
+}
+
+.card:nth-child(2) {
+    background: linear-gradient(135deg, #fff3cd, #ffffff);
+}
+
+.card:nth-child(3) {
+    background: linear-gradient(135deg, #d1f7c4, #ffffff);
+}
+
+.card:nth-child(4) {
+    background: linear-gradient(135deg, #cfe8ff, #ffffff);
+}
+
+.card:nth-child(5) {
+    background: linear-gradient(135deg, #e6d6ff, #ffffff);
+}
+
+/* Heading inside cards */
+.card h2 {
+    color: #145a3a;
+    margin-bottom: 18px;
+    font-family: cursive;
+}
+
+/* Button */
+ .glass-btn {
+      padding: 12px 24px;
+      border:none;
+      border-radius: 12px;
+      color: rgb(23, 1, 1);
+      background: rgba(8, 0, 8, 0.15);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .glass-btn:hover {
+      transform: scale(1.05);
+    }
+
+</style>
+</head>
+<body>
+
+    <h1>Plant Categories</h1>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Flowering Plants</h2>
+
+            <a href="flowering.html">
+                <button class="glass-btn">Open</button>
+            </a>
+        </div>
+
+        <div class="card">
+            <h2>Fruit Plants</h2>
+
+            <a href="fruits.html">
+                <button class="glass-btn">Open</button>
+            </a>
+        </div>
+
+        <div class="card">
+            <h2>Vegetable Plants</h2>
+
+            <a href="vegetables.html">
+                <button class="glass-btn">Open</button>
+            </a>
+        </div>
+
+        <div class="card">
+            <h2>Medicinal Plants</h2>
+
+            <a href="medicinal.html">
+                <button class="glass-btn">Open</button>
+            </a>
+        </div>
+
+    
+
+    </div>
+
+</body>
+
+</html>

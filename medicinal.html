@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowering Plants</title>
+
+    <style>
+
+        body{
+    margin:0;
+    padding:40px;
+    font-family:cursive;
+
+    background:
+    linear-gradient(rgba(255,240,245,0.5),
+    rgba(255,255,255,0.5)),
+    url("https://images.unsplash.com/photo-1515586000433-45406d8e6662?q=80&w=1974&auto=format&fit=crop");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+        h1{
+    text-align:center;
+    font-size:50px;
+    color:#1b5e20;
+    margin-bottom:30px;
+    text-shadow:2px 2px 10px rgba(0,0,0,0.2);
+}
+       .gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+        .plant-box{
+    background:rgba(255,255,255,0.25);
+    backdrop-filter:blur(10px);
+
+    border-radius:20px;
+    padding:20px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.2);
+
+    transition:0.4s;
+}
+.plant-box:hover{
+    transform:translateY(-10px) scale(1.02);
+}
+        .plant-box img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:15px;
+}
+.plant-box h3{
+    font-size:large;
+    color:#8e24aa;
+    margin-top:15px;
+}
+.plant-box h4{
+    color:#764582;
+    margin-top:15px;
+}
+
+.plant-box p{
+    color:#554053;
+    line-height:1.6;
+}
+        .back button{
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    margin-bottom:40px;
+    background:linear-gradient(to right,#d8d8db,#604c54);
+
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Medicinal Plants</h1>
+
+    <a href="plants.html" class="back">
+        <button>Back</button>
+    </a>
+
+    <div class="gallery">
+
+        
+        <div class="plant-box">
+            <img src="images/copper pod tree.jpeg">
+            <h3>Copper Pod Tree</h3>
+            <h4>Scientific Name:Peltophorum pterocarpum</h4>
+            <p> Traditionally, its bark is used in decoctions to treat dysentery, toothaches, and digestive issues. The leaf extracts and flowers are also studied for anti-inflammatory, antimicrobial, and sleep-inducing (treating insomnia) properties.</p>
+        </div>
+         <div class="plant-box">
+            <img src="images/chandelier plant.jpeg">
+            <h3>Chandelier Plant / Mother of Millions </h3>
+            <h4>Scientific Name:Kalanchoe delagoensis / tubiflora</h4>
+            <p>In various folk medicine traditions, its leaves are crushed and applied topically to treat burns, wounds, and dermatitis. Pharmacological studies have also explored its extracts for cytotoxic (anti-cancer) and anti-inflammatory properties, though it should be handled with care as it is highly toxic to livestock and pets if ingested due to cardiotonic steroids (bufadienolides).</p>
+        </div>
+         <div class="plant-box">
+            <img src="images/indian tree.jpeg">
+            <h3>Indian Tree / Mast Tree </h3>
+            <h4>Scientific Name:Polyalthia longifolia</h4>
+            <p>The bark and leaves are widely used in traditional Indian medicine (Ayurveda) to treat fever, skin diseases, hypertension, and diabetes. It is highly valued for its significant antimicrobial and antioxidant properties.</p>
+        </div>
+         <div class="plant-box">
+            <img src="images/lavender scallops.jpeg">
+            <h3> Lavender Scallops / Variegated Kalanchoe</h3>
+            <h4>Scientific Name:Kalanchoe fedtschenkoi</h4>
+            <p> Like many members of the Kalanchoe genus, it contains bioactive compounds (flavonoids and triterpenoids) that offer anti-inflammatory, antimicrobial, and wound-healing benefits when used in traditional topical poultices.</p>
+        </div>
+         <div class="plant-box">
+            <img src="images/indian tulip tree.jpeg">
+            <h3>Indian Tulip Tree </h3>
+            <h4>Scientific Name:Thespesia populnea</h4>
+            <p> Almost every part of this tree is therapeutic. The bark and heartwood are used to treat skin diseases (like psoriasis and scabies), dysentery, and hemorrhoids. The leaves possess anti-inflammatory and hepatoprotective (liver-protecting) properties.</p>
+        </div>
+         <div class="plant-box">
+            <img src="images/Rain tree.jpeg">
+            <h3> Rain Tree</h3>
+            <h4>Scientific Name:Samanea saman</h4>
+            <p>Traditional remedies utilize a decoction of the inner bark and leaves to treat diarrhea, stomachaches, and sore throats. In some cultures, leaf infusions are also used as a sedative.</p>
+        </div>
+         <div class="plant-box">
+            <img src="images/camel foot tree.jpeg">
+            <h3>Camel's Foot Tree / Orchid Tree</h3>
+            <h4>Scientific Name:Bauhinia variegata</h4>
+            <p>Famously known as Kachnar in Ayurveda, its bark, roots, and buds are widely used to treat thyroid alternatives (like goiter), skin ulcers, respiratory issues, and digestive disorders. The flower buds are also consumed as a medicinal vegetable.</p>
+        </div>
+        
+            
+        
+    </div>
+
+</body>
+
+</html>
