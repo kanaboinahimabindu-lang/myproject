@@ -82,6 +82,29 @@
 
     box-shadow:0 4px 15px rgba(0,0,0,0.2);
 }
+
+.home-icon{
+    position:fixed;
+    top:20px;
+    left:20px;
+
+    text-decoration:none;
+    font-size:28px;
+
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(6px);
+
+    padding:10px 14px;
+    border-radius:50%;
+
+    transition:0.3s;
+    z-index:1000;
+}
+
+.home-icon:hover{
+    transform:scale(1.1);
+    background:rgba(255,255,255,0.25);
+}
     </style>
 
 </head>
@@ -93,7 +116,7 @@
     <a href="plants.html" class="back">
         <button>Back</button>
     </a>
-
+    <a href="index.html" class="home-icon">🏠</a>
     <div class="gallery">
 
         <div class="plant-box">

@@ -82,6 +82,61 @@
 
     box-shadow:0 4px 15px rgba(0,0,0,0.2);
 }
+.home-icon{
+    position:fixed;
+    top:20px;
+    left:20px;
+
+    text-decoration:none;
+    font-size:28px;
+
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(6px);
+
+    padding:10px 14px;
+    border-radius:50%;
+
+    transition:0.3s;
+    z-index:1000;
+}
+
+.home-icon:hover{
+    transform:scale(1.1);
+    background:rgba(255,255,255,0.25);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal img {
+    width:auto;
+    height: auto;
+    max-width: 90vw;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+}
+
     </style>
 
 </head>
@@ -93,12 +148,12 @@
     <a href="plants.html" class="back">
         <button>Back</button>
     </a>
-
+    <a href="index.html" class="home-icon">🏠</a>
     <div class="gallery">
 
         <div class="plant-box">
-
-            <img src="images/temple tree.jpeg">
+            
+            <img src="images/temple tree.jpeg" data-location="Near Inigo Block" class="plant-img">
             <h3>Temple Tree / Frangipani</h3>
             <h4>Scientific Name:Plumeria alba</h4>
             <p>This plant is a small ornamental tree known for its fragrant white flowers and glossy green leaves. 
@@ -171,8 +226,49 @@
             <h4>Scientific Name:Rosa indica</h4>
             <p>Pink roses symbolize admiration and happiness and are popular ornamental plants. They grow best in well-drained soil with good sunlight.</p>
         </div>
-
+        
     </div>
+
+    <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+
+    <img id="modal-img">
+
+    <p id="plant-location" style="color:white; font-size:20px; margin-top:15px;"></p>
+    </div>
+
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const locationText = document.getElementById("plant-location");
+
+    const images = document.querySelectorAll(".plant-img");
+
+    images.forEach(img => {
+        img.addEventListener("click", function () {
+            modal.style.display = "flex";
+            modalImg.src = this.src;
+
+            const loc = this.getAttribute("data-location");
+            locationText.textContent = loc ? "Location: " + loc : "Location not available";
+        });
+    });
+
+    window.closeModal = function () {
+        modal.style.display = "none";
+    };
+
+    window.onclick = function (e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+
+});
+</script>
 
 </body>
 

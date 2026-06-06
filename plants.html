@@ -106,13 +106,35 @@ h1 {
     .glass-btn:hover {
       transform: scale(1.05);
     }
+    
+    .home-icon{
+    position:fixed;
+    top:20px;
+    left:20px;
 
+    text-decoration:none;
+    font-size:28px;
+
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(6px);
+
+    padding:10px 14px;
+    border-radius:50%;
+
+    transition:0.3s;
+    z-index:1000;
+}
+
+.home-icon:hover{
+    transform:scale(1.1);
+    background:rgba(255,255,255,0.25);
+}
 </style>
 </head>
 <body>
 
     <h1>Plant Categories</h1>
-
+    <a href="index.html" class="home-icon">🏠</a>
     <div class="container">
 
         <div class="card">
