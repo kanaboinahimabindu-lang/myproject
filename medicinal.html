@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+< lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -103,11 +103,44 @@
     transform:scale(1.1);
     background:rgba(255,255,255,0.25);
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal img {
+    width:auto;
+    height: auto;
+    max-width: 90vw;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+}
+
     </style>
 
 </head>
 
-<body>
+<>
 
     <h1>Medicinal Plants</h1>
 
@@ -119,51 +152,90 @@
 
         
         <div class="plant-box">
-            <img src="images/copper pod tree.jpeg">
+            <img src="images/copper pod tree.jpeg" data-location="Near Inigo Block" class="plant-img">
             <h3>Copper Pod Tree</h3>
             <h4>Scientific Name:Peltophorum pterocarpum</h4>
             <p> Traditionally, its bark is used in decoctions to treat dysentery, toothaches, and digestive issues. The leaf extracts and flowers are also studied for anti-inflammatory, antimicrobial, and sleep-inducing (treating insomnia) properties.</p>
         </div>
          <div class="plant-box">
-            <img src="images/chandelier plant.jpeg">
+            <img src="images/chandelier plant.jpeg" data-location="Near Inigo Block" class="plant-img">
             <h3>Chandelier Plant / Mother of Millions </h3>
             <h4>Scientific Name:Kalanchoe delagoensis / tubiflora</h4>
             <p>In various folk medicine traditions, its leaves are crushed and applied topically to treat burns, wounds, and dermatitis. Pharmacological studies have also explored its extracts for cytotoxic (anti-cancer) and anti-inflammatory properties, though it should be handled with care as it is highly toxic to livestock and pets if ingested due to cardiotonic steroids (bufadienolides).</p>
         </div>
          <div class="plant-box">
-            <img src="images/indian tree.jpeg">
+            <img src="images/indian tree.jpeg" data-location="Near Inigo Block" class="plant-img">
             <h3>Indian Tree / Mast Tree </h3>
             <h4>Scientific Name:Polyalthia longifolia</h4>
             <p>The bark and leaves are widely used in traditional Indian medicine (Ayurveda) to treat fever, skin diseases, hypertension, and diabetes. It is highly valued for its significant antimicrobial and antioxidant properties.</p>
         </div>
          <div class="plant-box">
-            <img src="images/lavender scallops.jpeg">
+            <img src="images/lavender scallops.jpeg" data-location="Near Inigo Block" class="plant-img">
             <h3> Lavender Scallops / Variegated Kalanchoe</h3>
             <h4>Scientific Name:Kalanchoe fedtschenkoi</h4>
             <p> Like many members of the Kalanchoe genus, it contains bioactive compounds (flavonoids and triterpenoids) that offer anti-inflammatory, antimicrobial, and wound-healing benefits when used in traditional topical poultices.</p>
         </div>
          <div class="plant-box">
-            <img src="images/indian tulip tree.jpeg">
+            <img src="images/indian tulip tree.jpeg" data-location="Near Inigo Block" class="plant-img">
             <h3>Indian Tulip Tree </h3>
             <h4>Scientific Name:Thespesia populnea</h4>
             <p> Almost every part of this tree is therapeutic. The bark and heartwood are used to treat skin diseases (like psoriasis and scabies), dysentery, and hemorrhoids. The leaves possess anti-inflammatory and hepatoprotective (liver-protecting) properties.</p>
         </div>
          <div class="plant-box">
-            <img src="images/Rain tree.jpeg">
+            <img src="images/Rain tree.jpeg" data-location="Near Inigo Block" class="plant-img">
             <h3> Rain Tree</h3>
             <h4>Scientific Name:Samanea saman</h4>
             <p>Traditional remedies utilize a decoction of the inner bark and leaves to treat diarrhea, stomachaches, and sore throats. In some cultures, leaf infusions are also used as a sedative.</p>
         </div>
          <div class="plant-box">
-            <img src="images/camel foot tree.jpeg">
+            <img src="images/camel foot tree.jpeg" data-location="Near Inigo Block" class="plant-img">
             <h3>Camel's Foot Tree / Orchid Tree</h3>
             <h4>Scientific Name:Bauhinia variegata</h4>
             <p>Famously known as Kachnar in Ayurveda, its bark, roots, and buds are widely used to treat thyroid alternatives (like goiter), skin ulcers, respiratory issues, and digestive disorders. The flower buds are also consumed as a medicinal vegetable.</p>
         </div>
         
-            
-        
     </div>
+
+     <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+
+    <img id="modal-img">
+
+    <p id="plant-location" style="color:white; font-size:20px; margin-top:15px;"></p>
+    </div>
+
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const locationText = document.getElementById("plant-location");
+
+    const images = document.querySelectorAll(".plant-img");
+
+    images.forEach(img => {
+        img.addEventListener("click", function () {
+            modal.style.display = "flex";
+            modalImg.src = this.src;
+
+            const loc = this.getAttribute("data-location");
+            locationText.textContent = loc ? "Location: " + loc : "Location not available";
+        });
+    });
+
+    window.closeModal = function () {
+        modal.style.display = "none";
+    };
+
+    window.onclick = function (e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+
+});
+</script>
 
 </body>
 

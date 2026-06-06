@@ -167,7 +167,7 @@ button:hover{
 .plant-facts{
     text-align:center;
     padding:40px 20px 80px;
-    background:transparent;
+    background:rgba(0,0,0,0.35);
 }
 
 .plant-facts h2{

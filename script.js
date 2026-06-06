@@ -35,26 +35,3 @@ setInterval(function() {
     currentFact = (currentFact + 1) % facts.length;
     document.getElementById("fact-text").textContent = facts[currentFact];
 }, 5000);
-const modal = document.getElementById("modal");
-const modalImg = document.getElementById("modal-img");
-const locationText = document.getElementById("plant-location");
-
-document.querySelector(".flowering-container").addEventListener("click", function (e) {
-    if (e.target.classList.contains("plant-img")) {
-        modal.style.display = "flex";
-        modalImg.src = e.target.src;
-
-        // get built-in location
-        locationText.textContent = "Location: " + e.target.dataset.location;
-    }
-});
-
-function closeModal() {
-    modal.style.display = "none";
-}
-
-window.onclick = function (e) {
-    if (e.target === modal) {
-        closeModal();
-    }
-};

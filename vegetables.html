@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+< lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -104,11 +104,44 @@
     transform:scale(1.1);
     background:rgba(255,255,255,0.25);
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal img {
+    width:auto;
+    height: auto;
+    max-width: 90vw;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+}
+
     </style>
 
 </head>
 
-<body>
+<>
 
     <h1>Vegetable Plants</h1>
 
@@ -120,14 +153,15 @@
 
         <div class="plant-box">
 
-            <img src="images/brinjal.jpeg">
+            <img src="images/brinjal.jpeg" data-location="Near Inigo Block" class="plant-img">
             <h3>Brinjal / Eggplant</h3>
             <h4>Scientific Name:Solanum melongena</h4>
             <p>Brinjal is a glossy purple vegetable widely used in Indian cuisine. It grows on small shrubs and is rich in fiber, vitamins, and antioxidants.</p>
 
         </div>
         
-        <div class="plant-box"><img src="images/cauliflower.jpeg">
+        <div class="plant-box">
+            <img src="images/cauliflower.jpeg" data-location="Near Inigo Block" class="plant-img">
             <h3>Cauliflower</h3>
             <h4>Scientific Name: Brassica oleracea var. botrytis</h4>
             <p>Cauliflower is a cool-season vegetable grown for its edible white head called a curd. Its large bluish-green leaves protect the developing head from direct sunlight and help maintain freshness.
@@ -137,14 +171,14 @@
         
         <div class="plant-box">
 
-            <img src="images/coriander.jpeg">
+            <img src="images/coriander.jpeg" data-location="Near Inigo Block" class="plant-img">
             <h3>Coriander / Cilantro</h3>
             <h4>Scientific Name: Coriandrum sativum</h4>
             <p>Coriander is a fragrant herb used in cooking for its fresh leaves and seeds. It is commonly added to curries, chutneys, and salads for extra flavor and aroma.</p>
         </div>
         <div class="plant-box">
 
-            <img src="images/spring onion.jpeg">
+            <img src="images/spring onion.jpeg" data-location="Near Inigo Block" class="plant-img">
             <h3>Spring Onion / Green Onion</h3>
             <h4>Scientific Name: Allium fistulosum</h4>
             <p>Spring onions have long green leaves with small white bulbs and are widely used for flavoring dishes. They are easy to grow and contain antioxidants and vitamins beneficial for health.</p>
@@ -152,14 +186,14 @@
         </div>
         <div class="plant-box">
 
-            <img src="images/tomato.jpeg">
+            <img src="images/tomato.jpeg" data-location="Near Inigo Block" class="plant-img">
             <h3>Tomato</h3>
             <h4>Scientific Name: Solanum lycopersicum</h4>
             <p>Tomato plants produce juicy fruits used in curries, sauces, salads, and soups. Tomatoes are rich in lycopene, vitamin C, and antioxidants that support good health</p>
         </div>
         <div class="plant-box">
 
-            <img src="images/ladies finger.jpeg">
+            <img src="images/ladies finger.jpeg" data-location="Near Inigo Block" class="plant-img">
             <h3> Ladies' Finger (Okra)</h3>
             <h4>Scientific Name: Abelmoschus esculentus</h4>
             <p> A popular warm-season vegetable valued for its edible, elongated green seed pods. It is characterized by its slightly viscous texture when cooked and is highly regarded for being rich in dietary fiber, vitamins, and antioxidants.</p>
@@ -168,6 +202,47 @@
         
         
     </div>
+
+     <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+
+    <img id="modal-img">
+
+    <p id="plant-location" style="color:white; font-size:20px; margin-top:15px;"></p>
+    </div>
+
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const locationText = document.getElementById("plant-location");
+
+    const images = document.querySelectorAll(".plant-img");
+
+    images.forEach(img => {
+        img.addEventListener("click", function () {
+            modal.style.display = "flex";
+            modalImg.src = this.src;
+
+            const loc = this.getAttribute("data-location");
+            locationText.textContent = loc ? "Location: " + loc : "Location not available";
+        });
+    });
+
+    window.closeModal = function () {
+        modal.style.display = "none";
+    };
+
+    window.onclick = function (e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+
+});
+</script>
 
 </body>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+< lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -105,11 +105,44 @@
     transform:scale(1.1);
     background:rgba(255,255,255,0.25);
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal img {
+    width:auto;
+    height: auto;
+    max-width: 90vw;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+}
+
     </style>
 
 </head>
 
-<body>
+<>
 
     <h1>Fruit Plants</h1>
 
@@ -121,25 +154,65 @@
 
         <div class="plant-box">
 
-            <img src="images/guava.jpeg">
+            <img src="images/guava.jpeg" data-location="Near Inigo Block" class="plant-img">
             <h3>Guava</h3>
             <h4>Scientific Name: Psidium guajava</h4>
             <p> A tropical evergreen tree bearing round or pear-shaped fruits with edible seeds and smooth, light-green or yellow skin. The aromatic flesh—which ranges from white to deep pink—is exceptionally high in vitamin C and dietary fiber.</p>
         </div>
         <div class="plant-box">
-            <img src="images/sweet lime.jpeg">
+            <img src="images/sweet lime.jpeg" data-location="Near Inigo Block" class="plant-img">
             <h3>Sweet Lime (Mosambi)</h3>
             <h4>Scientific Name: Citrus limetta</h4>
             <p> A popular, low-acid citrus fruit known for its sweet, mildly tangy juice. It is widely consumed in tropical regions and is highly favored for its refreshing properties, hydration benefits, and high vitamin C content.</p>
         </div>
         <div class="plant-box">
-            <img src="images/papaya.jpeg">
+            <img src="images/papaya.jpeg" data-location="Near Inigo Block" class="plant-img">
             <h3>Papaya</h3>
             <h4>Scientific Name: Carica papaya</h4>
             <p> A fast-growing tropical tree that produces large, fleshy fruits with sweet, vibrant orange-colored flesh. The fruit features a central cavity filled with edible black seeds and is an excellent source of vitamin C, papain (an enzyme that aids digestion), and antioxidants.</p>
         </div>
         
     </div>
+<div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+
+    <img id="modal-img">
+
+    <p id="plant-location" style="color:white; font-size:20px; margin-top:15px;"></p>
+    </div>
+
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const locationText = document.getElementById("plant-location");
+
+    const images = document.querySelectorAll(".plant-img");
+
+    images.forEach(img => {
+        img.addEventListener("click", function () {
+            modal.style.display = "flex";
+            modalImg.src = this.src;
+
+            const loc = this.getAttribute("data-location");
+            locationText.textContent = loc ? "Location: " + loc : "Location not available";
+        });
+    });
+
+    window.closeModal = function () {
+        modal.style.display = "none";
+    };
+
+    window.onclick = function (e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+
+});
+</script>
 
 </body>
 
